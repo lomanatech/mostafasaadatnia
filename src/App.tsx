@@ -52,7 +52,7 @@ function App() {
     cursor: "pointer"
   };
 
-  let persons = null;
+  let persons: (JSX.Element | null) = null;
   if (showPersonsState === true) {
     persons = (
       <div>
