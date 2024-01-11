@@ -12,8 +12,14 @@ function App() {
     ]
   });
 
-  const switchNameHandler = () =>{
-    console.log("Was clicked!");
+  const switchNameHandler = () => {
+    setState({
+      persons: [
+        { name: "Mostafa Saadatnia", age: 31 },
+        { name: "Firoozeh", age: 32 },
+        { name: "Maysam", age: 23 },
+      ]
+    })
   }
   return (
     <div className="App">
