@@ -4,21 +4,23 @@ import './App.css';
 import Person from './Person/Person'
 
 function App() {
-  const [state, setState] = useState({
+  const [personsState, setPersonsState] = useState({
     persons: [
       { name: "Mostafa", age: 31 },
       { name: "Firoozeh", age: 32 },
       { name: "Maysam", age: 22 },
-    ]
+    ],
+    otherState: "This is an other state"
   });
 
   const switchNameHandler = () => {
-    setState({
+    setPersonsState({
       persons: [
         { name: "Mostafa Saadatnia", age: 31 },
         { name: "Firoozeh", age: 32 },
         { name: "Maysam", age: 23 },
-      ]
+      ],
+      otherState: personsState.otherState
     })
   }
   return (
@@ -26,9 +28,9 @@ function App() {
       <h1>Hi, It's a React App!</h1>
       <p>It works perfectly indeed.</p>
       <button onClick={switchNameHandler}>Switch Name</button>
-      <Person name={state.persons[0].name} age={state.persons[0].age} />
-      <Person name={state.persons[1].name} age={state.persons[1].age}>I like React!</Person>
-      <Person name={state.persons[2].name} age={state.persons[2].age} />
+      <Person name={personsState.persons[0].name} age={personsState.persons[0].age} />
+      <Person name={personsState.persons[1].name} age={personsState.persons[1].age}>I like React!</Person>
+      <Person name={personsState.persons[2].name} age={personsState.persons[2].age} />
     </div>
   );
 }
