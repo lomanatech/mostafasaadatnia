@@ -13,10 +13,10 @@ function App() {
     otherState: "This is an other state"
   });
 
-  const switchNameHandler = () => {
+  const switchNameHandler = (newName: string) => {
     setPersonsState({
       persons: [
-        { name: "Mostafa Saadatnia", age: 31 },
+        { name: newName, age: 31 },
         { name: "Firoozeh", age: 32 },
         { name: "Maysam", age: 23 },
       ],
@@ -27,10 +27,17 @@ function App() {
     <div className="App">
       <h1>Hi, It's a React App!</h1>
       <p>It works perfectly indeed.</p>
-      <button onClick={switchNameHandler}>Switch Name</button>
-      <Person name={personsState.persons[0].name} age={personsState.persons[0].age} />
-      <Person name={personsState.persons[1].name} age={personsState.persons[1].age}>I like React!</Person>
-      <Person name={personsState.persons[2].name} age={personsState.persons[2].age} />
+      <button onClick={()=> switchNameHandler("Mostafa Saadatnia")}>Switch Name</button>
+      <Person
+        name={personsState.persons[0].name}
+        age={personsState.persons[0].age}
+        click={()=> switchNameHandler('Mostafa*')} />
+      <Person
+        name={personsState.persons[1].name}
+        age={personsState.persons[1].age}>I like React!</Person>
+      <Person
+        name={personsState.persons[2].name}
+        age={personsState.persons[2].age} />
     </div>
   );
 }
