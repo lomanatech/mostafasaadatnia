@@ -8,9 +8,9 @@ function App() {
     <div className="App">
       <h1>Hi, It's a React App!</h1>
       <p>It works perfectly indeed.</p>
-      <Person />
-      <Person />
-      <Person />
+      <Person name="Mostafa" age="31" />
+      <Person name="Firoozeh" age="32" />
+      <Person name="Maysam" age="22" />
     </div>
   );
 }
