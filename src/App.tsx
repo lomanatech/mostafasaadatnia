@@ -9,6 +9,8 @@ function App() {
       <h1>Hi, It's a React App!</h1>
       <p>It works perfectly indeed.</p>
       <Person />
+      <Person />
+      <Person />
     </div>
   );
 }
