@@ -50,6 +50,25 @@ function App() {
     border: "1px solid #102eee",
     font: "inherit",
     cursor: "pointer"
+  };
+
+  let persons = null;
+  if (showPersonsState === true) {
+    persons = (
+      <div>
+        <Person
+          name={personsState.persons[0].name}
+          age={personsState.persons[0].age}
+          click={() => switchNameHandler('Mostafa*')} />
+        <Person
+          name={personsState.persons[1].name}
+          age={personsState.persons[1].age}
+          changed={nameChangedHandler}>I like React!</Person>
+        <Person
+          name={personsState.persons[2].name}
+          age={personsState.persons[2].age} />
+      </div>
+    );
   }
 
   return (
@@ -57,23 +76,7 @@ function App() {
       <h1>Hi, It's a React App!</h1>
       <p>It works perfectly indeed.</p>
       <button style={buttonStyle} onClick={togglePersonsHander}>Toggle persons</button>
-      {
-        showPersonsState === true ?
-          <div>
-            <Person
-              name={personsState.persons[0].name}
-              age={personsState.persons[0].age}
-              click={() => switchNameHandler('Mostafa*')} />
-            <Person
-              name={personsState.persons[1].name}
-              age={personsState.persons[1].age}
-              changed={nameChangedHandler}>I like React!</Person>
-            <Person
-              name={personsState.persons[2].name}
-              age={personsState.persons[2].age} />
-          </div>
-          : null
-      }
+      {persons}
     </div>
   );
 }
