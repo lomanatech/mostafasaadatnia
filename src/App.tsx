@@ -35,11 +35,19 @@ function App() {
     });
   }
 
+  const buttonStyle = {
+    backgroundColor: "#eee",
+    padding: "8px",
+    border: "1px solid #102eee",
+    font: "inherit",
+    cursor: "pointer"
+  }
+
   return (
     <div className="App">
       <h1>Hi, It's a React App!</h1>
       <p>It works perfectly indeed.</p>
-      <button onClick={() => switchNameHandler("Mostafa Saadatnia")}>Switch Name</button>
+      <button style={buttonStyle} onClick={() => switchNameHandler("Mostafa Saadatnia")}>Switch Name</button>
       <Person
         name={personsState.persons[0].name}
         age={personsState.persons[0].age}
