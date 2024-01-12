@@ -6,9 +6,9 @@ import Person from './Person/Person'
 function App() {
   const [personsState, setPersonsState] = useState({
     persons: [
-      { name: "Mostafa", age: 31 },
-      { name: "Firoozeh", age: 32 },
-      { name: "Maysam", age: 22 },
+      { id: 'sa123-321x', name: "Mostafa", age: 31 },
+      { id: '3fk4-k92sd', name: "Firoozeh", age: 32 },
+      { id: '093fk-dfh32', name: "Maysam", age: 22 },
     ],
     otherState: "This is an other state"
   });
@@ -23,9 +23,9 @@ function App() {
   const switchNameHandler = (newName: string) => {
     setPersonsState({
       persons: [
-        { name: newName, age: 31 },
-        { name: "Firoozeh", age: 32 },
-        { name: "Maysam", age: 23 },
+        { id: 'sa123-321x', name: newName, age: 31 },
+        { id: '3fk4-k92sd', name: "Firoozeh", age: 32 },
+        { id: '093fk-dfh32', name: "Maysam", age: 22 },
       ],
       otherState: personsState.otherState
     });
@@ -34,15 +34,13 @@ function App() {
   const nameChangedHandler = (event: any) => {
     setPersonsState({
       persons: [
-        { name: "Mostafa", age: 31 },
-        { name: event.target.value, age: 32 },
-        { name: "Maysam", age: 23 },
+        { id: 'sa123-321x', name: "Mostafa", age: 31 },
+        { id: '3fk4-k92sd', name: event.target.value, age: 32 },
+        { id: '093fk-dfh32', name: "Maysam", age: 22 },
       ],
       otherState: personsState.otherState
     });
   }
-
-
 
   const buttonStyle = {
     backgroundColor: "#eee",
@@ -57,8 +55,8 @@ function App() {
     persons = (
       <div>
         {
-          personsState.persons.map(person => {
-            return <Person name={person.name} age={person.age} />
+          personsState.persons.map((person, index) => {
+            return <Person name={person.name} age={person.age} key={person.id} changed={nameChangedHandler} />
           })
         }
       </div>
