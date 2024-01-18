@@ -23,7 +23,7 @@ function App() {
   const switchNameHandler = (newName: string) => {
     setPersonsState({
       persons: [
-        { name: newName, age: 31 },
+        { name: newName.toEmptyIfNull(), age: 31 },
         { name: "Firoozeh", age: 32 },
         { name: "Maysam", age: 23 },
       ],
